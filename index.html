@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+
+
+
+<head> 
+<title>Mavericks</title>
+
+<style>
+
+body {
+	background-color: #0A0A0A;
+	font-family: "Helvetica", Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+
+#otsikko {
+	position: absolute;
+	top: 45px;
+	left: 70px;
+	padding: 12px 25px;
+	font-size: 38px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #00bfff;
+	background: linear-gradient(145deg, #000000, #0a0a0a);
+	border: 2px solid #0074d9;
+	border-radius: 10px;
+	box-shadow: 0 3px 10px rgba(0,0,0,0.4), inset 0 0 8px rgba(0,115,230,0.3);
+	text-shadow: 0 0 8px rgba(0,191,255,0.6);
+	cursor: pointer;
+	user-select: none;
+	transition: all 0.25s ease;
+	animation: otsikkoPulse 3s ease-in-out infinite;
+}
+
+#otsikko:hover {
+	transform: scale(1.03);
+	text-shadow: 0 0 14px rgba(0,191,255,0.9);
+	box-shadow: 0 0 18px rgba(0,191,255,0.5), inset 0 0 12px rgba(0,115,230,0.4);
+}
+
+#otsikko:active {
+	transform: scale(0.98);
+	box-shadow: 0 2px 6px rgba(0,0,0,0.6) inset;
+	text-shadow: 0 0 8px rgba(0,191,255,0.5);
+	border-color: #006fbf;
+}
+
+@keyframes otsikkoPulse {
+	0%, 100% { text-shadow: 0 0 8px rgba(0,191,255,0.6); }
+	50% { text-shadow: 0 0 14px rgba(0,191,255,1); }
+}
+
+/* LOGO */
+#logo {
+	position: absolute;
+	left: 75%;
+	top: 40px;
+	width: 590px;
+	height: 550px;
+	transform: translateX(-50%) scale(1);
+	border-radius: 50%;
+	box-shadow: 0 0 30px rgba(0,255,136,0.5);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	animation: smoothFloat 4s ease-in-out infinite;
+}
+
+#logo:hover {
+	transform: translateX(-50%) scale(1.15) rotate(5deg);
+	box-shadow: 0 0 60px rgba(0,255,136,0.9), 0 0 100px rgba(0,255,136,0.5);
+}
+
+#logo:active {
+	transform: translateX(-50%) scale(0.95) rotate(-3deg);
+	box-shadow: 0 0 40px rgba(0,255,136,0.7) inset;
+}
+
+@keyframes smoothFloat {
+	0% { transform: translateX(-50%) translateY(0) rotate(0deg) scale(1); }
+	25% { transform: translateX(-50%) translateY(-20px) rotate(3deg) scale(1.05); }
+	50% { transform: translateX(-50%) translateY(0) rotate(0deg) scale(1); }
+	75% { transform: translateX(-50%) translateY(20px) rotate(-3deg) scale(0.95); }
+	100% { transform: translateX(-50%) translateY(0) rotate(0deg) scale(1); }
+}
+
+
+#linkit1, #linkit2 {
+	position: fixed;
+	top: 250px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	z-index: 1000;
+}
+
+#linkit1 {
+	right: 80px;
+}
+
+#linkit2 {
+	right: 360px;
+}
+
+.linkstuff {
+	display: inline-block;
+	padding: 18px 36px;
+	font-size: 22px;
+	color: #00ff88;
+	background: #111;
+	border: 3px solid #00ff88;
+	border-radius: 14px;
+	text-decoration: none;
+	text-align: center;
+	box-shadow: 0 0 15px rgba(0,255,136,0.5);
+	transition: all 0.3s ease;
+	cursor: pointer;
+	position: relative;
+}
+
+.linkstuff:hover {
+	color: #fff;
+	background: #00ff88;
+	transform: translateY(-4px) scale(1.1);
+	box-shadow: 0 0 30px rgba(0,255,136,0.8),0 0 50px rgba(0,255,136,0.5);
+}
+
+.linkstuff:active {
+	transform: translateY(1px) scale(0.97);
+	box-shadow: 0 0 15px rgba(0,255,136,0.6) inset;
+}
+
+@keyframes pulse {
+	0%,100%{ box-shadow:0 0 15px rgba(0,255,136,0.5); }
+	50% { box-shadow:0 0 35px rgba(0,255,136,0.8);}
+}
+
+.linkstuff { animation: pulse 3s ease-in-out infinite; }
+
+
+#center {
+	position: absolute;
+	top: 150px;
+	left: 10px;
+	width: 530px;
+	height: 370px;
+	padding: 20px;
+	font-size: 1.1rem;
+	color: #00bfff;
+	background: linear-gradient(145deg,#000,#0a0a0a);
+	border: 2px solid #0074d9;
+	border-radius: 15px;
+	box-shadow:0 3px 15px rgba(0,0,0,0.5), inset 0 0 10px rgba(0,115,230,0.4);
+	text-shadow: 0 0 8px rgba(0,191,255,0.4);
+	overflow-y:auto;
+	scrollbar-width: thin;
+	scrollbar-color: #0074d9 rgba(255,255,255,0.1);
+	transition: all 0.3s ease;
+}
+
+#center::-webkit-scrollbar { width:8px; }
+#center::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius:10px;}
+#center::-webkit-scrollbar-thumb { background: #0074d9; border-radius:10px;}
+
+#center:hover {
+	transform: scale(1.02);
+	box-shadow:0 0 20px rgba(0,191,255,0.6), inset 0 0 15px rgba(0,115,230,0.4);
+}
+
+@keyframes centerPulse {
+	0%,100%{ box-shadow:0 0 12px rgba(0,191,255,0.4);}
+	50%{ box-shadow:0 0 20px rgba(0,191,255,0.7);}
+}
+#center { animation: centerPulse 3.5s ease-in-out infinite; }
+
+/* INTERACTIVE PHOTO */
+#mavsPhoto {
+	position: absolute;
+	top: 500px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 650px;
+}
+
+#mavsInteractive {
+	width: 100%;
+	border-radius: 20px;
+	box-shadow:0 0 25px rgba(0,191,255,0.5);
+	transition: 0.35s ease;
+	cursor: pointer;
+}
+
+#mavsInteractive:hover {
+	transform: scale(1.1) rotate(3deg);
+	box-shadow:0 0 45px rgba(0,191,255,0.9),0 0 80px rgba(0,255,136,0.6);
+}
+
+#mavsInteractive:active {
+	transform: scale(0.95) rotate(-3deg);
+	box-shadow:0 0 30px rgba(0,191,255,0.7) inset;
+}
+
+</style>
+</head>
+
+<body>
+
+	<div id="logo">
+		<img src="dallaslogo1.webp" width="269px" />
+	</div>
+
+	<div id="otsikko">Dallas Mavericks</div>
+
+	<div id="linkit1">
+		<a class="linkstuff" href="https://www.espn.com/nba/team/schedule/_/name/dal/dallas-mavericks" target="_blank">SCHEDULE</a>
+	</div>
+
+	<div id="linkit2">
+		<a class="linkstuff" href="https://www.nba.com/mavs/roster" target="_blank">PLAYERS</a>
+	</div>
+
+	
+	<div id="mavsPhoto">
+		<img id="mavsInteractive" src="dallascourt.webp" alt="Mavericks Court">
+	</div>
+
+	<div id="center">
+<p>The Dallas Mavericks (often referred to as the Mavs) are an American professional basketball team based in Dallas. The Mavericks compete in the National Basketball Association (NBA) as a member of the Southwest Division of the Western Conference. The team plays its home games at American Airlines Center, which it shares with the National Hockey League's Dallas Stars.</p>
+
+<p>Throughout the 1980s, the Mavericks were a perennial playoff team, led by All-Stars Rolando Blackman and Mark Aguirre. The team struggled during the 1990s, entering into a period of rebuilding. In 1998, the franchise's fortunes would change drastically with the acquisition of Dirk Nowitzki, who would become the cornerstone of the most successful period in franchise history, leading the team to its first NBA Finals appearance in 2006 and its only NBA championship in 2011.</p>
+
+<p>The Mavericks later entered a rebuilding phase in the tail end of Nowitzki's storied career; although they missed the playoffs in three consecutive years from 2017 to 2019 (after which Nowitzki retired following his record-breaking 21st season with Dallas), the franchise's fortunes immediately rebounded once again with the acquisition of Luka Dončić; the Mavericks returned to the playoffs in 2020, reached the Western Conference finals in 2022 for the first time since their 2011 championship, and reached their third NBA Finals in 2024. In February 2025, the Mavericks traded Dončić to the Los Angeles Lakers mainly for Anthony Davis.</p>
+
+<p>Since the Mavericks' inaugural 1980–81 season, the Mavericks have won five division titles (1987, 2007, 2010, 2021, 2024), three conference championships (2006, 2011, 2024) and one NBA championship (2011).</p>
+	</div>
+
+</body>
+</html>
